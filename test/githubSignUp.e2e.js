@@ -1,24 +1,24 @@
 import { browser, expect } from "@wdio/globals";
 import GitHubHomePage from "./pages/gitHubHome.page";
-import gitHubSignUpPage from "./pages/gitHubSignUp.page";
+import GitHubSignUpPage from "./pages/gitHubSignUp.page";
 import ProjectsPage from "./pages/projects.page";
 import SubscriptionPage from "./pages/subscription.page";
 import SearchResultsPage from "./pages/searchResults.page";
 import GitHubPricingPage from "./pages/githubPricing.page";
 
 describe("GitHub Registration", () => {
-  it("should fill the sign-up form on GitHub", async () => {
+  it.only("should fill the sign-up form on GitHub", async () => {
     await GitHubHomePage.open();
     await GitHubHomePage.clickSignUp();
 
-    const headingText = await gitHubSignUpPage.getHeadingText();
+    const headingText = await GitHubSignUpPage.getHeadingText();
     expect(headingText).toContain("Create your free account");
 
-    await gitHubSignUpPage.fillEmail("user123458@mail.com");
-    await gitHubSignUpPage.fillPassword("superPassword852");
-    await gitHubSignUpPage.fillUsername("superUser12358");
-    await gitHubSignUpPage.selectCountry("Ukraine");
-    await gitHubSignUpPage.clickContinue();
+    await GitHubSignUpPage.fillEmail("user123458@mail.com");
+    await GitHubSignUpPage.fillPassword("superPassword852");
+    await GitHubSignUpPage.fillUsername("superUser12358");
+    await GitHubSignUpPage.selectCountry("Ukraine");
+    await GitHubSignUpPage.clickContinue();
 
     await browser.pause(3000);
   });

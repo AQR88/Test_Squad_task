@@ -1,6 +1,6 @@
 import { $, browser } from "@wdio/globals";
 
-class gitHubSignUpPage {
+class GitHubSignUpPage {
   get heading() {
     return $("h1");
   }
@@ -56,8 +56,9 @@ class gitHubSignUpPage {
   }
 
   async clickContinue() {
+    await this.continueButton.scrollIntoView();
     await this.continueButton.click();
   }
 }
 
-export default new gitHubSignUpPage();
+export default new GitHubSignUpPage();
