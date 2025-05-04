@@ -7,7 +7,7 @@ import SearchResultsPage from "./pages/searchResults.page";
 import GitHubPricingPage from "./pages/githubPricing.page";
 
 describe("GitHub Registration", () => {
-  it.only("should fill the sign-up form on GitHub", async () => {
+  it("should fill the sign-up form on GitHub", async () => {
     await GitHubHomePage.open();
     await GitHubHomePage.clickSignUp();
 
